@@ -31,11 +31,9 @@ program isco
         read(str,*)a
      end if
   else
-     write(*,*)
-     write(*,'(A)')'  This program calculates ISCO properties for a black hole with mass m and spin a.'
+     write(*,'(/,A)')'  This program calculates ISCO properties for a black hole with mass m and spin a.'
      write(*,'(A)')'    syntax: isco <m> [<a>]'
-     write(*,'(A)')'  Input parameters are the BH mass (Mo) and the dimensionless spin -1<a<1; a<0: retrograde.'
-     write(*,*)
+     write(*,'(A,/)')'  Input parameters are the BH mass (Mo) and the dimensionless spin -1<a<1; a<0: retrograde.'
      stop
   end if
   

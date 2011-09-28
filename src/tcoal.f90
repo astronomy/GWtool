@@ -1,5 +1,8 @@
-! tcoal.f: Calculates time of coalescence from certain frequency f0.  Adapted from p2a.f
+!> \file tcoal.f90: Calculates time of coalescence from certain frequency f0.
+!!
+!! Adapted from p2a.f
 
+!***********************************************************************************************************************************
 program tcoal
   implicit none
   
@@ -28,13 +31,14 @@ program tcoal
      call getarg(5,str)
      read(str,*)theta
   else
-     write(6,*)''
-     write(6,'(A)')'This program calculates the coalescence time for a binary with masses M1 and M2 from a lower GW frequency of f0.'
-     write(6,'(A)')'  syntax: tcoal <f0> <M1> <M2> <S1> <theta_SL>'
-     write(6,*)''
-     write(6,'(A30,$)')'f0, M1, M2, S1, theta_SL:  '
-     read*,f0,m1,m2,s,theta
+     write(6,'(/,A)')'This program calculates the coalescence time for a binary with masses M1 and M2 from a lower GW'// &
+          ' frequency of f0.'
+     write(6,'(A,/)')'  syntax: tcoal <f0> <M1> <M2> <S1> <theta_SL>'
+     stop
+     !write(6,'(A30,$)')'f0, M1, M2, S1, theta_SL:  '
+     !read*,f0,m1,m2,s,theta
   end if
+  
   theta = theta/180.d0*pi
   
   m = m1+m2
@@ -59,4 +63,6 @@ program tcoal
   write(6,'(A15,F15.4)') '  PN:        ',t*pn
   write(6,*)''
   
-end program
+end program tcoal
+!***********************************************************************************************************************************
+
