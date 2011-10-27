@@ -2,15 +2,15 @@
 
 !***********************************************************************************************************************************
 program m1m2_mceta
+  use SUFR_kinds, only: double
   implicit none
-  integer :: iargc
-  real*8 :: eta,mc,m1,m2,m
+  real(double) :: eta,mc,m1,m2,m
   character :: bla*(99)
   
-  if(iargc().eq.2) then
-     call getarg(1,bla)
+  if(command_argument_count().eq.2) then
+     call get_command_argument(1,bla)
      read(bla,*)m1
-     call getarg(2,bla)
+     call get_command_argument(2,bla)
      read(bla,*)m2
   else
      write(6,'(/,A,/)')'  Syntax: m1_m2-mc_eta <m1> <m2>'

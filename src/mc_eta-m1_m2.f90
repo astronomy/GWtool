@@ -3,14 +3,15 @@
 
 !***********************************************************************************************************************************
 program mc_eta_m1_m2
+  use SUFR_kinds, only: double
   implicit none
-  real*8 :: eta,eta1,mc,m1,m2,mtot
-  character :: bla*99
+  real(double) :: eta,eta1,mc,m1,m2,mtot
+  character :: bla*(99)
   
-  if(iargc().eq.2) then
-     call getarg(1,bla)
+  if(command_argument_count().eq.2) then
+     call get_command_argument(1,bla)
      read(bla,*)mc
-     call getarg(2,bla)
+     call get_command_argument(2,bla)
      read(bla,*)eta
   else
      write(6,'(/,A,/)')'  Syntax: mc_eta-m1_m2 <Mc> <eta>'
@@ -18,8 +19,8 @@ program mc_eta_m1_m2
   end if
   
   if(eta.lt.0.d0.or.eta.gt.0.5d0) then
-  write(0,'(/,A,/)')'  Error: eta should be 0.0 <= eta <= 0.5'
-  !if(eta.lt.0.d0.or.eta.gt.0.25d0) then
+     write(0,'(/,A,/)')'  Error: eta should be 0.0 <= eta <= 0.5'
+     !if(eta.lt.0.d0.or.eta.gt.0.25d0) then
      !write(0,'(/,A,/)')'  Error: eta should be 0.0 <= eta <= 0.25'
      stop
   end if

@@ -5,29 +5,29 @@
 !! AF, 1/5/2008
 
 
+!***********************************************************************************************************************************
 program isco
+  use SUFR_kinds, only: double
   implicit none
-  real*8 :: a,pi,g,c,c3rd
-  real*8 :: risco,m,z1,z2,fiscogw,fiscoorb
-  real*8 :: r0,m0,day
-  integer :: narg,iargc,retro
+  real(double) :: a,pi,g,c,c3rd
+  real(double) :: risco,m,z1,z2,fiscogw,fiscoorb
+  real(double) :: m0
+  integer :: narg,retro
   character :: str*(99)
   
   pi   = 4*atan(1.d0)
   g    = 6.67259d-8
   c    = 299792458.d2
-  r0   = 6.9599d10
   m0   = 1.9891d33
-  day  = 8.64d4
   c3rd = 1.d0/3.d0
   
   a = 0.d0
-  narg = iargc()
+  narg = command_argument_count()
   if(narg.ge.1) then
-     call getarg(1,str)
+     call get_command_argument(1,str)
      read(str,*)m
      if(narg.ge.2) then
-        call getarg(2,str)
+        call get_command_argument(2,str)
         read(str,*)a
      end if
   else
@@ -50,7 +50,7 @@ program isco
   end if
   fiscoorb = c**3/(2*pi*(risco/m)**1.5d0*g*m*m0)
   fiscogw =  2*fiscoorb
-
+  
   !write(*,'(10ES13.3)')m,a,z1,z2,risco
   write(*,*)
   write(*,'(A,F12.3)')'  Mass:     ',m
@@ -63,4 +63,5 @@ program isco
   
   
 end program isco
+!***********************************************************************************************************************************
 

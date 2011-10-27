@@ -4,31 +4,31 @@
 
 !***********************************************************************************************************************************
 program tcoal
+  use SUFR_kinds, only: double
   implicit none
   
-  real*8 :: m1,m2,mc,mu,eta,t,f0,m,s,theta,x,beta,pn
-  real*8 :: pi,g,c,m0,day,c3rd
-  integer :: narg,iargc
-  character :: str*6
+  real(double) :: m1,m2,mc,mu,eta,t,f0,m,s,theta,x,beta,pn
+  real(double) :: pi,g,c,m0,c3rd
+  integer :: narg
+  character :: str*(6)
   
   pi = 4*datan(1.d0)
-   g = 6.67259d-8
-   c = 299792458.d2
+  g = 6.67259d-8
+  c = 299792458.d2
   m0 = 1.9891d33*g/c**3 !Solar mass in seconds (4.926d-6)
-  day = 8.64d4
   c3rd = 1.d0/3.d0
   
-  narg = iargc()
+  narg = command_argument_count()
   if(narg.eq.5) then
-     call getarg(1,str)
+     call get_command_argument(1,str)
      read(str,*)f0
-     call getarg(2,str)
+     call get_command_argument(2,str)
      read(str,*)m1
-     call getarg(3,str)
+     call get_command_argument(3,str)
      read(str,*)m2
-     call getarg(4,str)
+     call get_command_argument(4,str)
      read(str,*)s
-     call getarg(5,str)
+     call get_command_argument(5,str)
      read(str,*)theta
   else
      write(6,'(/,A)')'This program calculates the coalescence time for a binary with masses M1 and M2 from a lower GW'// &
