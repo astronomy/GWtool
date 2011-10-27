@@ -5,18 +5,16 @@
 !***********************************************************************************************************************************
 program tcoal
   use SUFR_kinds, only: double
-  implicit none
+  use SUFR_constants, only: set_SUFR_constants, c3rd,pi, pc_g,pc_c, msun
   
+  implicit none  
   real(double) :: m1,m2,mc,mu,eta,t,f0,m,s,theta,x,beta,pn
-  real(double) :: pi,g,c,m0,c3rd
+  real(double) :: m0
   integer :: narg
   character :: str*(6)
   
-  pi = 4*datan(1.d0)
-  g = 6.67259d-8
-  c = 299792458.d2
-  m0 = 1.9891d33*g/c**3 !Solar mass in seconds (4.926d-6)
-  c3rd = 1.d0/3.d0
+  call set_SUFR_constants()
+  m0   = msun*pc_g/pc_c**3  ! Solar mass in seconds (4.926d-6)
   
   narg = command_argument_count()
   if(narg.eq.5) then

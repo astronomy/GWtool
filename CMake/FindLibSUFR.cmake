@@ -30,7 +30,7 @@ find_path( LibSUFR_INCLUDES
 set( LibSUFR_LIBRARIES "" )
 
 find_library( LibSUFR_LIBRARY
-  NAMES SUFR SUFR_${Fortran_COMPILER_NAME}
+  NAMES SUFR_${Fortran_COMPILER_NAME} SUFR
   PATHS ${lib_locations}
   PATH_SUFFIXES libSUFR libSUFR_${Fortran_COMPILER_NAME}
   NO_DEFAULT_PATH
@@ -76,9 +76,10 @@ endif( LibSUFR_INCLUDES AND LibSUFR_LIBRARIES )
 if( LibSUFR_FOUND )
   
   if( NOT LibSUFR_FIND_QUIETLY )
+    message( STATUS "" )
     message( STATUS "Found components for LibSUFR:" )
-    message( STATUS "LibSUFR_INCLUDES  = ${LibSUFR_INCLUDES}" )
-    message( STATUS "LibSUFR_LIBRARIES = ${LibSUFR_LIBRARIES}" )
+    message( STATUS "* LibSUFR_INCLUDES  = ${LibSUFR_INCLUDES}" )
+    message( STATUS "* LibSUFR_LIBRARIES = ${LibSUFR_LIBRARIES}" )
   endif( NOT LibSUFR_FIND_QUIETLY )
   
 else( LibSUFR_FOUND )

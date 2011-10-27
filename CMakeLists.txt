@@ -76,10 +76,19 @@ endif( CREATE_VERSION )
 
 
 # Create executable targets:
-add_executable( isco          src/isco.f90 )
-add_executable( m1_m2-mc_eta  src/m1_m2-mc_eta.f90 )
-add_executable( mc_eta-m1_m2  src/mc_eta-m1_m2.f90 )
-add_executable( tcoal         src/tcoal.f90 )
+add_executable(        isco  src/isco.f90 )
+target_link_libraries( isco  ${LibSUFR_LIBRARIES} )
+
+add_executable(        m1_m2-mc_eta  src/m1_m2-mc_eta.f90 )
+target_link_libraries( m1_m2-mc_eta  ${LibSUFR_LIBRARIES} )
+
+add_executable(        mc_eta-m1_m2  src/mc_eta-m1_m2.f90 )
+target_link_libraries( mc_eta-m1_m2  ${LibSUFR_LIBRARIES} )
+
+add_executable(        tcoal  src/tcoal.f90 )
+target_link_libraries( tcoal  ${LibSUFR_LIBRARIES} )
+
+
 
 # Set module directory:
 set_target_properties( isco m1_m2-mc_eta mc_eta-m1_m2 tcoal
