@@ -1,5 +1,5 @@
 ##
-##  CMakeFile for GWtools
+##  CMakeFile for GWtool
 ##  AF, 27/10/2011
 ##
 ##  To compile, from the directory that contains this file, do:
@@ -21,12 +21,8 @@ set( CMAKE_CONFIGURATION_TYPES "${CMAKE_BUILD_TYPE}" CACHE INTERNAL "internal" )
 
 
 # Project name and language:
-project( GWtools Fortran )
+project( GWtool Fortran )
 
-
-# Use CPack for packaging:
-#include( CPack )
-#set( CPACK_INSTALL_PREFIX_PATH ${CMAKE_INSTALL_PREFIX_PATH} )
 
 # Search in the CMake/ directory for CMake modules:
 list( APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake )
@@ -79,11 +75,11 @@ endif( CREATE_VERSION )
 add_executable(        isco  src/isco.f90 )
 target_link_libraries( isco  ${LibSUFR_LIBRARIES} )
 
-add_executable(        m1_m2-mc_eta  src/m1_m2-mc_eta.f90 )
-target_link_libraries( m1_m2-mc_eta  ${LibSUFR_LIBRARIES} )
+add_executable(        m1m2-mceta  src/m1m2-mceta.f90 )
+target_link_libraries( m1m2-mceta  ${LibSUFR_LIBRARIES} )
 
-add_executable(        mc_eta-m1_m2  src/mc_eta-m1_m2.f90 )
-target_link_libraries( mc_eta-m1_m2  ${LibSUFR_LIBRARIES} )
+add_executable(        mceta-m1m2  src/mceta-m1m2.f90 )
+target_link_libraries( mceta-m1m2  ${LibSUFR_LIBRARIES} )
 
 add_executable(        tcoal  src/tcoal.f90 )
 target_link_libraries( tcoal  ${LibSUFR_LIBRARIES} )
@@ -91,14 +87,32 @@ target_link_libraries( tcoal  ${LibSUFR_LIBRARIES} )
 
 
 # Set module directory:
-set_target_properties( isco m1_m2-mc_eta mc_eta-m1_m2 tcoal
+set_target_properties( isco m1m2-mceta mceta-m1m2 tcoal
   PROPERTIES Fortran_MODULE_DIRECTORY ${MODULE_DIRECTORY} )
 
 
 # Install to destination:
+install( TARGETS isco m1m2-mceta mceta-m1m2 tcoal RUNTIME DESTINATION bin )
 # - use DIRECTORY rather than TARGETS so that I don't need to specify them all again...
-install( DIRECTORY usr/bin/ 
-    FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE 
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin )
+#install( DIRECTORY usr/bin/ 
+#    FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE 
+#    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin )
+
+
+# Use CPack for packaging:
+set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "GWtool" )
+set( CPACK_PACKAGE_VENDOR "AstroFloyd" )
+set( CPACK_GENERATOR "NSIS" )
+set( CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/doc/README" )
+set( CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/doc/LICENCE" )
+set( CPACK_PACKAGE_VERSION_MAJOR "0" )
+set( CPACK_PACKAGE_VERSION_MINOR "1" )
+set( CPACK_PACKAGE_VERSION_PATCH "1" )
+set( CPACK_INSTALL_PREFIX_PATH ${CMAKE_INSTALL_PREFIX_PATH} )
+#set( CPACK_STRIP_FILES "bin/MyExecutable" )
+#set( CPACK_SOURCE_STRIP_FILES "" )
+#set( CPACK_PACKAGE_EXECUTABLES "MyExecutable" "My Executable" )
+set( CPACK_SOURCE_IGNORE_FILES "/build/;/.bzr/;/usr/;/obj/;Makefile" )
+include( CPack )
 
 

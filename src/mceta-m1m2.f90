@@ -1,8 +1,33 @@
-!> \file  mc_eta-m1_m2.f90  Convert the Chirp mass and symmetric mass ratio to M1 and M2
+!   
+!   GWtool:       Simple tools for working with gravitational waves
+!                 http://gwtool.sourceforge.net/
+!   
+!   
+!   Copyright 2007-2011 AstroFloyd - astrofloyd.org
+!   
+!   
+!   This file is part of GWtool.
+!   
+!   GWtool is free software: you can redistribute it and/or modify
+!   it under the terms of the GNU General Public License as published by
+!   the Free Software Foundation, either version 3 of the License, or
+!   (at your option) any later version.
+!   
+!   GWtool is distributed in the hope that it will be useful,
+!   but WITHOUT ANY WARRANTY; without even the implied warranty of
+!   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+!   GNU General Public License for more details.
+!   
+!   You should have received a copy of the GNU General Public License
+!   along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+!> \file  mceta-m1m2.f90  Convert the Chirp mass and symmetric mass ratio to M1 and M2
 
 
 !***********************************************************************************************************************************
-program mc_eta_m1_m2
+program mceta_m1m2
   use SUFR_kinds, only: double
   implicit none
   real(double) :: eta,eta1,mc,m1,m2,mtot
@@ -43,6 +68,6 @@ program mc_eta_m1_m2
   write(6,'(A,2F15.8)')'  M1/M2, M: ',m1/m2,m1+m2
   write(*,*)
   
-end program mc_eta_m1_m2
+end program mceta_m1m2
 !***********************************************************************************************************************************
 
