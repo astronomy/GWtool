@@ -93,26 +93,10 @@ set_target_properties( isco m1m2-mceta mceta-m1m2 tcoal
 
 # Install to destination:
 install( TARGETS isco m1m2-mceta mceta-m1m2 tcoal RUNTIME DESTINATION bin )
+
 # - use DIRECTORY rather than TARGETS so that I don't need to specify them all again...
 #install( DIRECTORY usr/bin/ 
 #    FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE 
 #    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin )
-
-
-# Use CPack for packaging:
-set( CPACK_PACKAGE_DESCRIPTION_SUMMARY "GWtool" )
-set( CPACK_PACKAGE_VENDOR "AstroFloyd" )
-set( CPACK_GENERATOR "NSIS" )
-set( CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/doc/README" )
-set( CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/doc/LICENCE" )
-set( CPACK_PACKAGE_VERSION_MAJOR "0" )
-set( CPACK_PACKAGE_VERSION_MINOR "1" )
-set( CPACK_PACKAGE_VERSION_PATCH "1" )
-set( CPACK_INSTALL_PREFIX_PATH ${CMAKE_INSTALL_PREFIX_PATH} )
-#set( CPACK_STRIP_FILES "bin/MyExecutable" )
-#set( CPACK_SOURCE_STRIP_FILES "" )
-#set( CPACK_PACKAGE_EXECUTABLES "MyExecutable" "My Executable" )
-set( CPACK_SOURCE_IGNORE_FILES "/build/;/.bzr/;/usr/;/obj/;Makefile" )
-include( CPack )
 
 
