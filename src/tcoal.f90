@@ -23,7 +23,7 @@
 
 
 
-!> \file tcoal.f90: Calculates time of coalescence from certain frequency f0.
+!> \file tcoal.f90 Calculates time of coalescence from certain frequency f0.
 !!
 !! Adapted from p2a.f
 
