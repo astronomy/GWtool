@@ -100,9 +100,3 @@ set_target_properties( isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal
 # Install to destination:
 install( TARGETS isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal RUNTIME DESTINATION bin )
 
-# - use DIRECTORY rather than TARGETS so that I don't need to specify them all again...
-#install( DIRECTORY usr/bin/ 
-#    FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE 
-#    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin )
-
-
