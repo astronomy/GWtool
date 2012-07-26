@@ -81,18 +81,24 @@ target_link_libraries( m1m2-mceta  ${LibSUFR_LIBRARIES} )
 add_executable(        mceta-m1m2  src/mceta-m1m2.f90 )
 target_link_libraries( mceta-m1m2  ${LibSUFR_LIBRARIES} )
 
+add_executable(        q2eta  src/q2eta.f90 )
+target_link_libraries( q2eta  ${LibSUFR_LIBRARIES} )
+
+add_executable(        eta2q  src/eta2q.f90 )
+target_link_libraries( eta2q  ${LibSUFR_LIBRARIES} )
+
 add_executable(        tcoal  src/tcoal.f90 )
 target_link_libraries( tcoal  ${LibSUFR_LIBRARIES} )
 
 
 
 # Set module directory:
-set_target_properties( isco m1m2-mceta mceta-m1m2 tcoal
+set_target_properties( isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal
   PROPERTIES Fortran_MODULE_DIRECTORY ${MODULE_DIRECTORY} )
 
 
 # Install to destination:
-install( TARGETS isco m1m2-mceta mceta-m1m2 tcoal RUNTIME DESTINATION bin )
+install( TARGETS isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal RUNTIME DESTINATION bin )
 
 # - use DIRECTORY rather than TARGETS so that I don't need to specify them all again...
 #install( DIRECTORY usr/bin/ 
