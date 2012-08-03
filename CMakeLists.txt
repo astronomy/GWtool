@@ -90,13 +90,16 @@ target_link_libraries( eta2q  ${LibSUFR_LIBRARIES} )
 add_executable(        tcoal  src/tcoal.f90 )
 target_link_libraries( tcoal  ${LibSUFR_LIBRARIES} )
 
+add_executable(        binary_contact_gw  src/binary_contact_gw.f90 )
+target_link_libraries( binary_contact_gw  ${LibSUFR_LIBRARIES} )
+
 
 
 # Set module directory:
-set_target_properties( isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal
+set_target_properties( isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal binary_contact_gw
   PROPERTIES Fortran_MODULE_DIRECTORY ${MODULE_DIRECTORY} )
 
 
 # Install to destination:
-install( TARGETS isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal RUNTIME DESTINATION bin )
+install( TARGETS isco m1m2-mceta mceta-m1m2 q2eta eta2q tcoal binary_contact_gw RUNTIME DESTINATION bin )
 
