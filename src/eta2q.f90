@@ -5,7 +5,7 @@
 !                 http://gwtool.sourceforge.net/
 !   
 !   
-!   Copyright 2007-2011 AstroFloyd - astrofloyd.org
+!   Copyright 2007-2013 AstroFloyd - astrofloyd.org
 !   
 !   
 !   This file is part of GWtool.

@@ -3,7 +3,7 @@
 !                 http://gwtool.sourceforge.net/
 !   
 !   
-!   Copyright 2007-2011 AstroFloyd - astrofloyd.org
+!   Copyright 2007-2013 AstroFloyd - astrofloyd.org
 !   
 !   
 !   This file is part of GWtool.
@@ -47,9 +47,9 @@ program m1m2_mceta
   mc = m*eta**0.6d0
   
   write(6,*)''
-  write(6,'(A,2F15.8)')'  M1, M2:   ',m1,m2
-  write(6,'(A,2F15.8)')'  Mc, eta:  ',mc,eta
-  write(6,'(A,2F15.8)')'  M1/M2, M: ',m1/m2,m
+  write(6,'(A,2F15.8)') '  M1, M2:          ',m1,m2
+  write(6,'(A,2F15.8)') '  Mc, eta:         ',mc,eta
+  write(6,'(A,3F15.8)') '  M1/M2, M2/M1, M: ',m1/m2,m2/m1,m
   write(6,*)''
   
 end program m1m2_mceta
