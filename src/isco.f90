@@ -1,3 +1,10 @@
+!> \file isco.f90  Calculates isco properties for a black hole with mass m and spin a
+!!
+!! \see Bardeen, Press, Teukolsky, 1972ApJ...178..347B
+!!
+!! AF, 1/5/2008
+
+
 !   
 !   GWtool:       Simple tools for working with gravitational waves
 !                 http://gwtool.sourceforge.net/
@@ -21,13 +28,6 @@
 !   You should have received a copy of the GNU General Public License
 !   along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
 
-
-
-!> \file isco.f90  Calculates isco properties for a black hole with mass m and spin a
-!!
-!! \see Bardeen, Press, Teukolsky, 1972ApJ...178..347B
-!!
-!! AF, 1/5/2008
 
 
 !***********************************************************************************************************************************

@@ -1,3 +1,8 @@
+!> \file tcoal.f90 Calculates time of coalescence from certain frequency f0.
+!!
+!! Adapted from p2a.f
+
+
 !   
 !   GWtool:       Simple tools for working with gravitational waves
 !                 http://gwtool.sourceforge.net/
@@ -21,11 +26,6 @@
 !   You should have received a copy of the GNU General Public License
 !   along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
 
-
-
-!> \file tcoal.f90 Calculates time of coalescence from certain frequency f0.
-!!
-!! Adapted from p2a.f
 
 
 

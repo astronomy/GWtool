@@ -1,3 +1,6 @@
+!> \file  mceta-m1m2.f90  Convert the Chirp mass and symmetric mass ratio to M1 and M2
+
+
 !   
 !   GWtool:       Simple tools for working with gravitational waves
 !                 http://gwtool.sourceforge.net/
@@ -21,9 +24,6 @@
 !   You should have received a copy of the GNU General Public License
 !   along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
 
-
-
-!> \file  mceta-m1m2.f90  Convert the Chirp mass and symmetric mass ratio to M1 and M2
 
 
 !***********************************************************************************************************************************

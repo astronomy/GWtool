@@ -1,3 +1,6 @@
+!> \file m1m2-mceta.f90  Compute Mc and eta from M1 and M2
+
+
 !   
 !   GWtool:       Simple tools for working with gravitational waves
 !                 http://gwtool.sourceforge.net/
@@ -22,8 +25,6 @@
 !   along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
 
 
-
-!> \file m1m2-mceta.f90  Compute Mc and eta from M1 and M2
 
 !***********************************************************************************************************************************
 program m1m2_mceta

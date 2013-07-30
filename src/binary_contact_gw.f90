@@ -1,3 +1,8 @@
+!> \file binary_contact_gw.f90  Calculates time of coalescence for a binary with given masses and period
+!!
+!! Adapted from tcoal.f90
+
+
 !   
 !   GWtool:       Simple tools for working with gravitational waves
 !                 http://gwtool.sourceforge.net/
@@ -22,10 +27,6 @@
 !   along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
 
 
-
-!> \file binary_contact_gw.f90  Calculates time of coalescence for a binary with given masses and period
-!!
-!! Adapted from tcoal.f90
 
 
 
