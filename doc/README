@@ -1,17 +1,23 @@
 
-GWtool README
-
+GWtool README  -  gwtool.sf.net
 
 The GWtool package provides a few simple tools that may come in handy when working
 with gravitational waves.  GWtool is written in Fortran 2003/8 and requires libSUFR
-(libsufr.sourceforge.net).
+(libsufr.sf.net).
 
 Programs included:
- * isco:		Compute the ISCO frequency of a black hole with given mass and spin
- * m1m2-mceta		Convert binary masses M1,M2 to chirp mass and symmetric mass ratio
- * mceta-m1m2		Convert binary chirp mass and symmetric mass ratio to M1,M2
- * tcoal		Compute the coalescence time for a binary with given initial 
-      			frequency, masses and spin (for one component)
+ * binary_contact_gw:    Compute time of coalescence for given binary masses and period
+ * eta2q:                Convert symmetric mass ratio eta to asymmetric mass ratio q
+ * isco:		 Compute the ISCO frequency of a black hole with given mass and spin
+ * ligo_mcmc_injection:  Create a simple LIGO inspiral injection.xml file
+                           for use with lalinference_mcmc
+ * ligo_xml2screen:      Print the contents of a LIGO injection.xml file to screen
+ * m1m2-mceta:		 Convert binary masses M1,M2 to chirp mass and symmetric mass ratio
+ * match_wfs:            Match two time-domain waveforms in files
+ * mceta-m1m2:		 Convert binary chirp mass and symmetric mass ratio to M1,M2
+ * q2eta:                Convert asymmetric mass ratio q to symmetric mass ratio eta
+ * tcoal:		 Compute the coalescence time for a binary with given initial
+      			   frequency, masses and spin (for one component)
 
 
 
