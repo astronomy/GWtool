@@ -78,9 +78,9 @@ contains
   !*********************************************************************************************************************************
   !> \brief  Write an injection xml character data value to file
   !!
-  !! \param op     Output unit
-  !! \param array  Array of character values to write
-  !! \param comma  Write comma after entry?
+  !! \param op      Output unit
+  !! \param string  Character string to write
+  !! \param comma   Write comma after entry?
   
   subroutine write_string(op, string, comma)
     implicit none
