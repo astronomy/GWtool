@@ -1,11 +1,27 @@
 ##
 ##  CMakeFile for GWtool
-##  AF, 27/10/2011
+##  AF, 2011-10-27
 ##
-##  To compile, from the directory that contains this file, do:
-##    $ mkdir build; cd build
-##    $ cmake ..
-##    $ make
+##  Copyright 2007-2013 AstroFloyd - astrofloyd.org
+##  
+##  This file is part of the GWtool package,
+##  see: http://gwtool.sf.net/
+##  
+##  GWtool is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
+##  
+##  GWtool is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##  
+##  You should have received a copy of the GNU General Public License
+##  along with GWtool.  If not, see <http://www.gnu.org/licenses/>.
+##
+##  To install this software on your system, see the INSTALL file
+##  in the root or doc/ directory of this package.
 ##
 
 

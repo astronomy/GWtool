@@ -1,9 +1,23 @@
-## SetCompileOptions.cmake: 
-## Various compile/optimisation options that we may want to enable:
+##  SetCompileOptions.cmake: 
+##  Various compile/optimisation options that we may want to enable
+##  
+##  Copyright 2010-2013 AstroFloyd - astrofloyd.org
+##   
+##  This file is part of the CMakeFiles package, 
+##  see: http://cmakefiles.sf.net/
+##   
+##  This is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published
+##  by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+##  
+##  This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+##  
+##  You should have received a copy of the GNU General Public License along with this code.  If not, see 
+##  <http://www.gnu.org/licenses/>.
 
 
 option( CMAKE_VERBOSE_MAKEFILE  "Verbose makefile" off )
-option( CREATE_VERSION          "Create a code-version file with svn/bzr version and date (for developers)" off )
+option( CREATE_VERSION          "Create a code-version file with svn/bzr/git version, hash and date (for developers)" off )
 
 option( WANT_CHECKS             "Activate runtime checks (array bounds, NaNs)" off )
 option( WANT_WARNINGS           "Activate warnings" on )
