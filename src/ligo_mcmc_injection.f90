@@ -119,7 +119,7 @@ program mcmc_injection
   Narg = command_argument_count()
   if(Narg.eq.1.or.Narg.eq.2) then
      call get_command_argument(1, ipfile)
-     opfile = 'test_injection.xml'
+     opfile = 'injection.xml'
      if(Narg.eq.2) call get_command_argument(2, opfile)
   else
      call syntax_quit('<inputfile.dat> [<outputfile.xml>]', 0)

@@ -1,0 +1,30 @@
+! Example injection.dat for GWtool/ligo_mcmc_injection - gwtool.sf.net
+
+&INJECTION_DATA
+ WAVEFORM             =  'SpinTaylorT4threePointFivePN',   ! Name of the waveform to use for the injection, e.g. 'SpinTaylorT4threePointFivePN'
+ 
+ GEOCENT_END_TIME     =  1000000010,                       ! GPS time of injection, seconds
+ GEOCENT_END_TIME_NS  =  0,                                ! GPS time of injection, nanoseconds
+ 
+ MASS1                =  11.0,                             ! Mass of binary component 1 (Mo - M1, M2 will be converted to Mc, eta)
+ MASS2                =  9.0,                              ! Mass of binary component 2 (Mo - M1, M2 will be converted to Mc, eta)
+ 
+ DISTANCE             =  20.0,                             ! Luminosity distance (Mpc)
+ 
+ LONGITUDE            =  1.5001,                           ! Sky position "Longitude" (rad - ~ right ascension?)
+ LATITUDE             =  0.7606,                           ! Sky position "Latitude" (rad - ~ declination?)
+ 
+ INCLINATION          =  0.1745329,                        ! Inclination of the binary plane (rad, 0-pi?)
+ POLARIZATION         =  0.3490658,                        ! Polarisation angle (rad, ...?)
+ COA_PHASE            =  4.286765,                         ! Coalescence (binary orbital) phase (rad, 0-2pi)
+ 
+ SPIN1                =  0.999,                            ! Spin magnitude of binary component 1 (a_1, 0-1)
+ THETA1               =  1.1331489,                        ! Spin tilt of binary component 1 (rad, 0-pi?)
+ PHI1                 =  1.01766455,                       ! Spin phase of binary component 1 (rad, 0-2pi?)
+
+ SPIN2                =  1.0d-7,                           ! Spin magnitude of binary component 1 (a_2, 0-1)
+ THETA2               =  1.9058877,                        ! Spin tilt of binary component 1 (rad, 0-pi?)   
+ PHI2                 =  4.55426073,                       ! Spin phase of binary component 1 (rad, 0-2pi?) x
+ 
+ F_LOWER              =  40.0                              ! Lower cut-off frequency (Hz), e.g. 40.0
+ /
