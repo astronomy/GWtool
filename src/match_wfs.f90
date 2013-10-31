@@ -9,6 +9,7 @@ program match_wfs
   use SUFR_kinds, only: double
   use SUFR_system, only: syntax_quit
   use SUFR_constants, only: set_SUFR_constants
+  use SUFR_numerics, only: deq,dne
   
   implicit none
   integer :: ln,lnr
@@ -36,8 +37,8 @@ program match_wfs
   !write(*,'(5(A,ES12.5))') '  Avg h1: ',hsum1/dble(ln), ',  avg.dh/avg.h1: ', dh/(2*hsum1)
   !write(*,'(2(A,ES12.5),A,F10.5)') '  Tot dt: ',dt, ',  avg.dt: ',dt/dble(ln), ',  avg.dt*1e6: ',dt/dble(ln)*1.d6
   write(*,'(2(A,ES12.5),A,F10.5)') '  Avg.dt: ',dt/dble(ln)
-  if(dt.eq.0.d0 .and. dh.eq.0.d0) write(*,'(/,A)') '  The two waveforms are identical'
-  if(dt.ne.0.d0) write(*,'(/,A)') '  There is a time offset'
+  if(deq(dt,0.d0) .and. deq(dh,0.d0)) write(*,'(/,A)') '  The two waveforms are identical'
+  if(dne(dt,0.d0)) write(*,'(/,A)') '  There is a time offset'
   write(*,*)
   
 end program match_wfs
