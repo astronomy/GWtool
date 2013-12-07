@@ -1,4 +1,4 @@
-!> \file binary_contact_gw.f90  Calculates time of coalescence for a binary with given masses and period
+!> \file gw_binary_contact.f90  Calculates time of coalescence for a binary with given masses and period
 !!
 !! Adapted from tcoal.f90
 

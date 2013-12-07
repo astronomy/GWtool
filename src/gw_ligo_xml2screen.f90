@@ -1,4 +1,4 @@
-!> \file ligo_xml2screen.f90  Print the contents of a LIGO/Virgo injection.xml file to screen
+!> \file gw_ligo_xml2screen.f90  Print the contents of a LIGO/Virgo injection.xml file to screen
 
 !***********************************************************************************************************************************
 !> \brief  Print the contents of a LIGO/Virgo injection.xml file to screen

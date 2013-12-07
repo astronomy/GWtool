@@ -1,4 +1,4 @@
-!> \file match_wfs.f90  Match the two waveforms in specified files
+!> \file gw_match_wfs.f90  Match the two waveforms in specified files
 
 !***********************************************************************************************************************************
 !> \brief  Match the two waveforms in specified files

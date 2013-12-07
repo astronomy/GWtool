@@ -1,4 +1,4 @@
-!> \file  mceta-m1m2.f90  Convert the Chirp mass and symmetric mass ratio to M1 and M2
+!> \file  gw_mceta-m1m2.f90  Convert the Chirp mass and symmetric mass ratio to M1 and M2
 
 
 !   

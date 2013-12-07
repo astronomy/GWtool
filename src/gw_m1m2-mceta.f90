@@ -1,4 +1,4 @@
-!> \file m1m2-mceta.f90  Compute Mc and eta from M1 and M2
+!> \file gw_m1m2-mceta.f90  Compute Mc and eta from M1 and M2
 
 
 !   

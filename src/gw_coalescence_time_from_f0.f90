@@ -1,4 +1,4 @@
-!> \file tcoal.f90 Calculates time of coalescence from certain frequency f0.
+!> \file gw_coalescence_time_from_f0.f90  Calculates time of coalescence for a LIGO binary from certain frequency f0.
 !!
 !! Adapted from p2a.f
 

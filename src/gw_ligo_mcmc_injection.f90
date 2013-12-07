@@ -1,4 +1,4 @@
-!> \file ligo_mcmc_injection.f90  Create an inspiral injection xml to use for lalinference_mcmc
+!> \file gw_ligo_mcmc_injection.f90  Create an inspiral injection xml to use for lalinference_mcmc
 
 !***********************************************************************************************************************************
 !> \brief  Share stream data content

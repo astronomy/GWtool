@@ -1,4 +1,4 @@
-!> \file isco.f90  Calculates isco properties for a black hole with mass m and spin a
+!> \file gw_isco.f90  Calculates isco properties for a black hole with mass m and spin a
 !!
 !! \see Bardeen, Press, Teukolsky, 1972ApJ...178..347B
 !!

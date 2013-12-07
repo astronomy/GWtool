@@ -1,4 +1,4 @@
-!> \file eta2q.f90  Compute the symmetric mass ratio eta from the asymmetric mass ratio q
+!> \file gw_eta2q.f90  Compute the symmetric mass ratio eta from the asymmetric mass ratio q
 
 !   
 !   GWtool:       Simple tools for working with gravitational waves

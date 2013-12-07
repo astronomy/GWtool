@@ -88,44 +88,44 @@ endif( CREATE_VERSION )
 
 
 # Create executable targets:
-add_executable(        binary_contact_gw  src/binary_contact_gw.f90 )
-target_link_libraries( binary_contact_gw  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_binary_contact  src/gw_binary_contact.f90 )
+target_link_libraries( gw_binary_contact  ${LibSUFR_LIBRARIES} )
 
-add_executable(        eta2q  src/eta2q.f90 )
-target_link_libraries( eta2q  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_eta2q  src/gw_eta2q.f90 )
+target_link_libraries( gw_eta2q  ${LibSUFR_LIBRARIES} )
 
-add_executable(        isco  src/isco.f90 )
-target_link_libraries( isco  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_isco  src/gw_isco.f90 )
+target_link_libraries( gw_isco  ${LibSUFR_LIBRARIES} )
 
-add_executable(        ligo_mcmc_injection  src/ligo_mcmc_injection.f90 )
-target_link_libraries( ligo_mcmc_injection  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_ligo_mcmc_injection  src/gw_ligo_mcmc_injection.f90 )
+target_link_libraries( gw_ligo_mcmc_injection  ${LibSUFR_LIBRARIES} )
 
-add_executable(        ligo_xml2screen  src/ligo_xml2screen.f90 )
-target_link_libraries( ligo_xml2screen  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_ligo_xml2screen  src/gw_ligo_xml2screen.f90 )
+target_link_libraries( gw_ligo_xml2screen  ${LibSUFR_LIBRARIES} )
 
-add_executable(        m1m2-mceta  src/m1m2-mceta.f90 )
-target_link_libraries( m1m2-mceta  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_m1m2-mceta  src/gw_m1m2-mceta.f90 )
+target_link_libraries( gw_m1m2-mceta  ${LibSUFR_LIBRARIES} )
 
-add_executable(        match_wfs  src/match_wfs.f90 src/wf_routines.f90 )
-target_link_libraries( match_wfs  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_match_wfs  src/gw_match_wfs.f90 src/wf_routines.f90 )
+target_link_libraries( gw_match_wfs  ${LibSUFR_LIBRARIES} )
 
-add_executable(        mceta-m1m2  src/mceta-m1m2.f90 )
-target_link_libraries( mceta-m1m2  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_mceta-m1m2  src/gw_mceta-m1m2.f90 )
+target_link_libraries( gw_mceta-m1m2  ${LibSUFR_LIBRARIES} )
 
-add_executable(        q2eta  src/q2eta.f90 )
-target_link_libraries( q2eta  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_q2eta  src/gw_q2eta.f90 )
+target_link_libraries( gw_q2eta  ${LibSUFR_LIBRARIES} )
 
-add_executable(        tcoal  src/tcoal.f90 )
-target_link_libraries( tcoal  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_coalescence_time_from_f0  src/gw_coalescence_time_from_f0.f90 )
+target_link_libraries( gw_coalescence_time_from_f0  ${LibSUFR_LIBRARIES} )
 
 
 
 # Set module directory:
-set_target_properties( binary_contact_gw eta2q isco ligo_mcmc_injection ligo_xml2screen m1m2-mceta match_wfs mceta-m1m2 q2eta tcoal
+set_target_properties( gw_binary_contact gw_eta2q gw_isco gw_ligo_mcmc_injection gw_ligo_xml2screen gw_m1m2-mceta gw_match_wfs gw_mceta-m1m2 gw_q2eta gw_coalescence_time_from_f0
   PROPERTIES Fortran_MODULE_DIRECTORY ${MODULE_DIRECTORY} )
 
 
 # Install to destination:
-install( TARGETS       binary_contact_gw eta2q isco ligo_mcmc_injection ligo_xml2screen m1m2-mceta match_wfs mceta-m1m2 q2eta tcoal
+install( TARGETS       gw_binary_contact gw_eta2q gw_isco gw_ligo_mcmc_injection gw_ligo_xml2screen gw_m1m2-mceta gw_match_wfs gw_mceta-m1m2 gw_q2eta gw_coalescence_time_from_f0
   RUNTIME DESTINATION bin )
 
