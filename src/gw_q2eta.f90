@@ -28,8 +28,10 @@
 !***********************************************************************************************************************************
 !> \brief Compute the symmetric mass ratio eta from the asymmetric mass ratio q
 
-program q2eta
+program gw_q2eta
   use SUFR_kinds, only: double
+  use SUFR_system, only: syntax_quit
+  
   implicit none
   real(double) :: q, eta
   character :: tmpstr*(99)
@@ -38,14 +40,13 @@ program q2eta
      call get_command_argument(1,tmpstr)
      read(tmpstr,*) q
   else
-     write(6,'(/,A,/)')'  Syntax: q2eta <q>'
-     stop
+     call syntax_quit('<q>', 0, 'This program converts the asymmetric mass ratio q to the asymmetric mass ratio eta')
   end if
   
   eta = q/(1.d0+q)**2
   
-  write(6,'(/,A,F15.8,/)') '  Eta:  ', eta
+  write(6,'(/,2x,A,F11.8,/)') 'Eta:', eta
   
-end program q2eta
+end program gw_q2eta
 !***********************************************************************************************************************************
 

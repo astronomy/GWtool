@@ -1,8 +1,9 @@
-!> \file gw_coalescence_pmax.f90  Calculates the maximum initial period that can be brought to 0 within a certain time
+!> \file gw_coalescence_pmax.f90  Calculates the maximum initial period that can coalesce within a certain time
 
 !***********************************************************************************************************************************
-program gwpmax    
+program gw_coalescence_pmax    
   use SUFR_kinds, only: double
+  use SUFR_system, only: syntax_quit
   use SUFR_constants, only: set_SUFR_constants, c3rd,pi2, pc_g,pc_c, msun, solday,julyear
   
   implicit none
@@ -17,10 +18,8 @@ program gwpmax
      call get_command_argument(3, tmpstr)
      read(tmpstr,*) time
   else
-     write(*,'(/,A)')'  This program calculates the maximum initial period that can converge (to 0) due to GWs within a '// &
-          'certain time'
-     write(6,'(A,/)')'  Syntax: gw_coalescence_pmax  <M1> <M2> <time>  (Mo and Gyr)'
-     stop
+     call syntax_quit('<M1> <M2> <time>  (Mo and Gyr)', 0, &
+          'This program calculates the maximum initial period that can coalesce due to GWs within a certain time')
   end if
   
   call set_SUFR_constants()
@@ -31,5 +30,5 @@ program gwpmax
   
   write(6,'(/,A,1p,G13.5,A5,/)') '  Maximum initial period for convergence:',per,'days'
   
-end program gwpmax
+end program gw_coalescence_pmax
 !***********************************************************************************************************************************

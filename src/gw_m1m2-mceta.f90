@@ -27,8 +27,10 @@
 
 
 !***********************************************************************************************************************************
-program m1m2_mceta
+program gw_m1m2_mceta
   use SUFR_kinds, only: double
+  use SUFR_system, only: syntax_quit
+  
   implicit none
   real(double) :: eta,mc,m1,m2,m
   character :: bla*(99)
@@ -39,20 +41,19 @@ program m1m2_mceta
      call get_command_argument(2,bla)
      read(bla,*)m2
   else
-     write(6,'(/,A,/)')'  Syntax: m1_m2-mc_eta <m1> <m2>'
-     stop
+     call syntax_quit('<m1> <m2>', 0, 'This program converts masses in M1, M2 to Mchirp and eta')
   end if
   
   m = m1+m2
   eta = m1*m2/(m*m)
   mc = m*eta**0.6d0
   
-  write(6,*)''
-  write(6,'(A,2F15.8)') '  M1, M2:          ',m1,m2
-  write(6,'(A,2F15.8)') '  Mc, eta:         ',mc,eta
-  write(6,'(A,3F15.8)') '  M1/M2, M2/M1, M: ',m1/m2,m2/m1,m
-  write(6,*)''
+  write(*,*)''
+  write(*,'(2x,A,2F15.8)') 'M1, M2:          ',m1,m2
+  write(*,'(2x,A,2F15.8)') 'Mc, eta:         ',mc,eta
+  write(*,'(2x,A,3F15.8)') 'M1/M2, M2/M1, M: ',m1/m2,m2/m1,m
+  write(*,*)''
   
-end program m1m2_mceta
+end program gw_m1m2_mceta
 !***********************************************************************************************************************************
 

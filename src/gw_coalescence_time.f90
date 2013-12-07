@@ -1,7 +1,7 @@
 !> \file gw_coalescence_time.f90  Calculates the time needed to reach a certain Porb (default 0) using gravitational-wave evolution
 
 !***********************************************************************************************************************************
-program gwtime
+program gw_coalescence_time
   use SUFR_kinds, only: double
   use SUFR_constants, only: set_SUFR_constants, pi2,msun,julyear,solday,c3rd, pc_g,pc_c
   use SUFR_system, only: syntax_quit
@@ -42,6 +42,6 @@ program gwtime
   
   write(*,'(A,ES15.7,A,/)')'  Time needed: ',trl,' yr'
   
-end program gwtime
+end program gw_coalescence_time
 !***********************************************************************************************************************************
 

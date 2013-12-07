@@ -4,8 +4,9 @@
 !***********************************************************************************************************************************
 !> \brief  Calculates the orbital period of a detached stellar binary after a given time of GW evolution
 
-program GWperiod
+program gw_final_period
   use SUFR_kinds, only: double
+  use SUFR_system, only: syntax_quit
   use SUFR_constants, only: set_SUFR_constants, c3rd,pi2, pc_g,pc_c, msun, solday,julyear
   
   implicit none
@@ -22,9 +23,8 @@ program GWperiod
      call get_command_argument(4, tmpstr)
      read(tmpstr,*) time
   else
-     write(*,'(/,A)')'  This program calculates the orbital period of a detached stellar binary after a given time of GW evolution'
-     write(*,'(A,/)')'  Syntax:  gw_final_period <M1> <M2> <Pi> <t>  (Mo, days and yr)'
-     stop
+     call syntax_quit('<M1> <M2> <Pi> <t>  (Mo, days and yr)', 0, &
+          'This program calculates the orbital period of a detached stellar binary after a given time of GW evolution')
   end if
   
   call set_SUFR_constants()
@@ -35,17 +35,16 @@ program GWperiod
   
   write(*,*)
   if(Pf83.lt.0.d0) then
-     write(*,'(A,ES11.3,A)')'  System has already merged after ',time,' yr.'
-     !stop
+     write(*,'(2x,A,ES11.3,A)') 'System has already merged after ',time,' yr.'
      Pf83 = 0.d0
   end if
   
   Pf = Pf83 ** 0.375d0 / solday
   
-  write(6,'(A9,ES20.9,A5)')' Pf: ',Pf,' days'
-  write(6,'(A9,ES20.9,A5)')' Pf/Pi: ',Pf/Pin,''
-  
+  write(*,'(2x,A,ES20.9,A5)') 'Pf:    ',Pf,' days'
+  write(*,'(2x,A,ES20.9,A5)') 'Pf/Pi: ',Pf/Pin,''
   write(*,*)
-end program GWperiod
+  
+end program gw_final_period
 !***********************************************************************************************************************************
 

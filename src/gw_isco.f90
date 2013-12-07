@@ -2,7 +2,7 @@
 !!
 !! \see Bardeen, Press, Teukolsky, 1972ApJ...178..347B
 !!
-!! AF, 1/5/2008
+!! AF, 2008-05-01
 
 
 !   
@@ -31,8 +31,9 @@
 
 
 !***********************************************************************************************************************************
-program isco
+program gw_isco
   use SUFR_kinds, only: double
+  use SUFR_system, only: syntax_quit
   use SUFR_constants, only: set_SUFR_constants, c3rd,pi, pc_g,pc_c, msun
   
   implicit none
@@ -52,10 +53,8 @@ program isco
         read(str,*)a
      end if
   else
-     write(*,'(/,A)')'  This program calculates ISCO properties for a black hole with mass m and spin a.'
-     write(*,'(A)')'    syntax: isco <m> [<a>]'
-     write(*,'(A,/)')'  Input parameters are the BH mass (Mo) and the dimensionless spin -1<a<1; a<0: retrograde.'
-     stop
+     call syntax_quit('<Mbh> [<a_spin>]', 0, &
+          'This program calculates ISCO properties for a black hole with mass Mbh (Mo) and dimensionless spin -1 < a_spin < 1')
   end if
   
   retro = 0
@@ -72,17 +71,16 @@ program isco
   fiscoorb = pc_c**3/(2*pi*(risco/m)**1.5d0*pc_g*m*msun)
   fiscogw =  2*fiscoorb
   
-  !write(*,'(10ES13.3)')m,a,z1,z2,risco
+
   write(*,*)
-  write(*,'(A,F12.3)')'  Mass:     ',m
-  write(*,'(A,F12.3)')'  Spin:     ',a
+  write(*,'(2x,A,F12.3)') 'Mass:     ', m
+  write(*,'(2x,A,F12.3)') 'Spin:     ', a
   write(*,*)
-  write(*,'(A,F12.3)')'  Risco/M:  ',risco/m
-  write(*,'(A,F12.4)')'  fisco,orb:',fiscoorb
-  write(*,'(A,F12.4)')'  fisco,gw: ',fiscogw
+  write(*,'(2x,A,F12.3)') 'Risco/M:  ', risco/m
+  write(*,'(2x,A,F12.4)') 'fisco,orb:', fiscoorb
+  write(*,'(2x,A,F12.4)') 'fisco,gw: ', fiscogw
   write(*,*)
   
-  
-end program isco
+end program gw_isco
 !***********************************************************************************************************************************
 

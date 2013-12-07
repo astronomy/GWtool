@@ -106,7 +106,7 @@ end module routines
 !***********************************************************************************************************************************
 !> \brief  Create an inspiral injection xml to use for lalinference_mcmc
 
-program mcmc_injection
+program gw_ligo_mcmc_injection
   use SUFR_system, only: find_free_io_unit, syntax_quit, file_open_error_quit
   use SUFR_constants, only: set_SUFR_constants
   
@@ -141,7 +141,7 @@ program mcmc_injection
   call write_xml_footer(op)
   close(op)
 
-end program mcmc_injection
+end program gw_ligo_mcmc_injection
 !***********************************************************************************************************************************
 
 

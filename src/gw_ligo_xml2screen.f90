@@ -3,7 +3,7 @@
 !***********************************************************************************************************************************
 !> \brief  Print the contents of a LIGO/Virgo injection.xml file to screen
 
-program ligoxml2screen
+program gw_ligo_xml2screen
   use SUFR_constants, only: set_SUFR_constants
   use SUFR_system, only: find_free_io_unit, quit_program_error, syntax_quit
   use SUFR_text, only: replace_substring, remove_substring
@@ -143,5 +143,5 @@ program ligoxml2screen
   
   write(*,*)
   
-end program ligoxml2screen
+end program gw_ligo_xml2screen
 !***********************************************************************************************************************************

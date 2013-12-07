@@ -5,7 +5,7 @@
 !!
 !! \note  The files are assumed to contain time-domain waveforms, in two columns: time and strain
 
-program match_wfs
+program gw_match_wfs
   use SUFR_kinds, only: double
   use SUFR_system, only: syntax_quit
   use SUFR_constants, only: set_SUFR_constants
@@ -41,7 +41,7 @@ program match_wfs
   if(dne(dt,0.d0)) write(*,'(/,A)') '  There is a time offset'
   write(*,*)
   
-end program match_wfs
+end program gw_match_wfs
 !***********************************************************************************************************************************
 
 
