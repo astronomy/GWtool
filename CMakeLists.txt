@@ -88,11 +88,17 @@ endif( CREATE_VERSION )
 
 
 # Create executable targets:
-add_executable(        gw_binary_contact  src/gw_binary_contact.f90 )
-target_link_libraries( gw_binary_contact  ${LibSUFR_LIBRARIES} )
+add_executable(        gw_coalescence_pmax  src/gw_coalescence_pmax.f90 )
+target_link_libraries( gw_coalescence_pmax  ${LibSUFR_LIBRARIES} )
+
+add_executable(        gw_coalescence_time  src/gw_coalescence_time.f90 )
+target_link_libraries( gw_coalescence_time  ${LibSUFR_LIBRARIES} )
 
 add_executable(        gw_eta2q  src/gw_eta2q.f90 )
 target_link_libraries( gw_eta2q  ${LibSUFR_LIBRARIES} )
+
+add_executable(        gw_final_period  src/gw_final_period.f90 )
+target_link_libraries( gw_final_period  ${LibSUFR_LIBRARIES} )
 
 add_executable(        gw_isco  src/gw_isco.f90 )
 target_link_libraries( gw_isco  ${LibSUFR_LIBRARIES} )
@@ -121,11 +127,11 @@ target_link_libraries( gw_coalescence_time_from_f0  ${LibSUFR_LIBRARIES} )
 
 
 # Set module directory:
-set_target_properties( gw_binary_contact gw_eta2q gw_isco gw_ligo_mcmc_injection gw_ligo_xml2screen gw_m1m2-mceta gw_match_wfs gw_mceta-m1m2 gw_q2eta gw_coalescence_time_from_f0
+set_target_properties( gw_coalescence_pmax gw_coalescence_time gw_eta2q gw_final_period gw_isco gw_ligo_mcmc_injection gw_ligo_xml2screen gw_m1m2-mceta gw_match_wfs gw_mceta-m1m2 gw_q2eta gw_coalescence_time_from_f0
   PROPERTIES Fortran_MODULE_DIRECTORY ${MODULE_DIRECTORY} )
 
 
 # Install to destination:
-install( TARGETS       gw_binary_contact gw_eta2q gw_isco gw_ligo_mcmc_injection gw_ligo_xml2screen gw_m1m2-mceta gw_match_wfs gw_mceta-m1m2 gw_q2eta gw_coalescence_time_from_f0
+install( TARGETS       gw_coalescence_pmax gw_coalescence_time gw_eta2q gw_final_period gw_isco gw_ligo_mcmc_injection gw_ligo_xml2screen gw_m1m2-mceta gw_match_wfs gw_mceta-m1m2 gw_q2eta gw_coalescence_time_from_f0
   RUNTIME DESTINATION bin )
 
