@@ -26,7 +26,7 @@
 
 
 !***********************************************************************************************************************************
-!> \brief Compute the symmetric mass ratio eta from the asymmetric mass ratio q
+!> \brief  Compute the symmetric mass ratio eta from the asymmetric mass ratio q
 
 program gw_q2eta
   use SUFR_kinds, only: double
