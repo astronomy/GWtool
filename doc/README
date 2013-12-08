@@ -6,18 +6,18 @@ with gravitational waves.  GWtool is written in Fortran 2003/8 and requires libS
 (libsufr.sf.net).
 
 Programs included:
- * binary_contact_gw:    Compute time of coalescence for given binary masses and period
- * eta2q:                Convert symmetric mass ratio eta to asymmetric mass ratio q
- * isco:		 Compute the ISCO frequency of a black hole with given mass and spin
- * ligo_mcmc_injection:  Create a simple LIGO inspiral injection.xml file
-                           for use with lalinference_mcmc
- * ligo_xml2screen:      Print the contents of a LIGO injection.xml file to screen
- * m1m2-mceta:		 Convert binary masses M1,M2 to chirp mass and symmetric mass ratio
- * match_wfs:            Match two time-domain waveforms in files
- * mceta-m1m2:		 Convert binary chirp mass and symmetric mass ratio to M1,M2
- * q2eta:                Convert asymmetric mass ratio q to symmetric mass ratio eta
- * tcoal:		 Compute the coalescence time for a binary with given initial
-      			   frequency, masses and spin (for one component)
+  * gw_coalescence_pmax:          Calculates the maximum initial period that can coalesce within a certain time
+  * gw_coalescence_time:          Calculates the time needed to reach a certain Porb (default 0) using gravitational-wave evolution
+  * gw_coalescence_time_from_f0:  Calculates time of coalescence for a LIGO binary from certain frequency f0
+  * gw_eta2q:                     Compute the symmetric mass ratio &eta; from the asymmetric mass ratio q
+  * gw_final_period:              Calculates the orbital period of a detached stellar binary after a given time of GW evolution
+  * gw_isco:                      Calculates isco properties for a black hole with given mass and spin
+  * gw_ligo_mcmc_injection:       Create an inspiral injection xml to use for lalinference_mcmc
+  * gw_ligo_xml2screen:           Print the contents of a LIGO/Virgo injection.xml file to screen
+  * gw_m1m2-mceta:                Compute chirp mass and symmetric mass ratio from the individual masses
+  * gw_match_wfs:                 Match two time-domain waveforms in specified files
+  * gw_mceta-m1m2:                Convert the chirp mass and symmetric mass ratio to individual masses
+  * gw_q2eta:                     Compute the symmetric mass ratio &eta; from the asymmetric mass ratio q
 
 
 
