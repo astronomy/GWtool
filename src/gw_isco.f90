@@ -37,7 +37,7 @@ program gw_isco
   use SUFR_constants, only: set_SUFR_constants, c3rd,pi, pc_g,pc_c, msun
   
   implicit none
-  real(double) :: a, risco,m,z1,z2,fiscogw,fiscoorb
+  real(double) :: a, risco,m,z1,z2,f_isco_gw,f_isco_orb
   integer :: narg,retro
   character :: str*(99)
   
@@ -64,21 +64,21 @@ program gw_isco
   z1 = 1 + (1 - a*a)**c3rd * ( (1+a)**c3rd + (1-a)**c3rd )
   z2 = sqrt(3*a*a + z1*z1)
   if(retro.eq.0) then
-     risco = m * (3+z2 - sqrt((3-z1)*(3+z1+2*z2)) )
+     risco = m * (3+z2 - sqrt((3-z1)*(3+z1+2*z2)) )  ! Expressed in M
   else
-     risco = m * (3+z2 + sqrt((3-z1)*(3+z1+2*z2)) )
+     risco = m * (3+z2 + sqrt((3-z1)*(3+z1+2*z2)) )  ! Expressed in M
   end if
-  fiscoorb = pc_c**3/(2*pi*(risco/m)**1.5d0*pc_g*m*msun)
-  fiscogw =  2*fiscoorb
+  f_isco_orb = pc_c**3/(2*pi*(risco/m)**1.5d0*pc_g*m*msun)
+  f_isco_gw =  2*f_isco_orb
   
-
+  
   write(*,*)
-  write(*,'(2x,A,F12.3)') 'Mass:     ', m
-  write(*,'(2x,A,F12.3)') 'Spin:     ', a
+  write(*,'(2x,A,F12.3)') 'Mass:      ', m
+  write(*,'(2x,A,F12.3)') 'Spin:      ', a
   write(*,*)
-  write(*,'(2x,A,F12.3)') 'Risco/M:  ', risco/m
-  write(*,'(2x,A,F12.4)') 'fisco,orb:', fiscoorb
-  write(*,'(2x,A,F12.4)') 'fisco,gw: ', fiscogw
+  write(*,'(2x,A,F12.3)') 'Risco/M:   ', risco/m
+  write(*,'(2x,A,F12.4)') 'f_isco,orb:', f_isco_orb
+  write(*,'(2x,A,F12.4)') 'f_isco,gw: ', f_isco_gw
   write(*,*)
   
 end program gw_isco
