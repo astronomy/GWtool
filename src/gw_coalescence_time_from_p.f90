@@ -1,11 +1,11 @@
-!> \file gw_coalescence_time.f90  Calculates the time needed to reach a certain Porb (default 0) using gravitational-wave evolution
+!> \file gw_coalescence_time_from_p.f90  Calculates the time needed to reach a certain Porb (default 0) using gravitational-wave evolution
 
 !   
 !   GWtool:       Simple tools for working with gravitational waves
 !                 http://gwtool.sourceforge.net/
 !   
 !   
-!   Copyright 2007-2013 AstroFloyd - astrofloyd.org
+!   Copyright 2007-2024 AstroFloyd - astrofloyd.org
 !   
 !   
 !   This file is part of GWtool.
@@ -26,9 +26,9 @@
 
 
 !***********************************************************************************************************************************
-!> \brief  Calculates the time needed to reach a certain Porb (default 0) using gravitational-wave evolution
+!> \brief  Calculates the time needed to reach a certain Porb (default 0) using gravitational-wave evolution.
 
-program gw_coalescence_time
+program gw_coalescence_time_from_p
   use SUFR_kinds, only: double
   use SUFR_constants, only: set_SUFR_constants, pi2,msun,julyear,solday,c3rd, pc_g,pc_c
   use SUFR_system, only: syntax_quit
@@ -67,8 +67,8 @@ program gw_coalescence_time
   Pf  = Pf  * solday
   trl = ( Pin**(8*c3rd) - Pf**(8*c3rd) ) * cst/julyear
   
-  write(*,'(A,ES15.7,A,/)')'  Time needed: ',trl,' yr'
+  write(*,'(A,ES15.7,A,/)') '  Time needed: ',trl,' yr'
   
-end program gw_coalescence_time
+end program gw_coalescence_time_from_p
 !***********************************************************************************************************************************
 
